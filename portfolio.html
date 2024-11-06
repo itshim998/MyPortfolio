@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sounak Poddar</title>
+    <meta name="description" content="Portfolio of Sounak Poddar - A B.Tech student passionate about web development, graphics design, and AI/ML.">
+    <meta name="keywords" content="Sounak Poddar, Web Developer, Graphics Designer, AI/ML">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #FFFFFF;
+            --link-color: #FFFFFF;
+            --link-hover-color: #FFA500;
+            --primary-font: 'Roboto', sans-serif;
+            --animation-duration: 2s;
+            --animation-delay: 0.5s;
+            --tile-hover-scale: 1.05;
+            --font-size: 14px;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--primary-font);
+            font-size: var(--font-size);
+            background: url('https://i.ibb.co/Pz87qx9/webbg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Link Styling */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: var(--link-hover-color);
+        }
+
+        /* Logo */
+        .logo {
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 1000;
+        }
+        .logo img {
+            width: 100px; /* Adjust the size of the logo */
+            height: auto;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .navbar a {
+            color: #FFF;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        .navbar a:focus,
+        .navbar a:hover {
+            color: #FFA500;
+        }
+
+        /* Ensure all headings are white and use the Roboto font */
+        .hero h1,
+        section h2,
+        .interactive-tile h3,
+        .project-item h3 {
+            color: var(--text-color); /* Sets color to white */
+            font-family: var(--primary-font); /* Applies the Roboto font */
+        }
+
+        /* Fullscreen Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn var(--animation-duration) ease-in-out;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 700;
+            animation: typing 3s steps(30, end), fadeIn var(--animation-duration);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .hero p {
+            font-size: 1.2em;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 2.0;
+            text-align: left;
+            opacity: 0;
+            animation: fadeIn var(--animation-duration) 1s forwards;
+        }
+
+        /* Section styles */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            animation: slideIn var(--animation-duration) ease-in-out;
+        }
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        /* Interactive Tiles */
+        .interactive-tiles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .interactive-tile {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(34, 34, 34, 0.85);
+            border-radius: 8px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .interactive-tile h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .interactive-tile img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+        .interactive-tile img:hover {
+            transform: scale(var(--tile-hover-scale));
+        }
+
+        /* Social Media Links */
+        .social-media {
+            margin-top: 20px;
+        }
+        .social-media a {
+            margin: 0 10px;
+        }
+        .social-media img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1em;
+                line-height: 1.6;
+            }
+            section h2 {
+                font-size: 2em;
+            }
+            .interactive-tile h3 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="https://i.ibb.co/gyC0wyD/heylogojpg.jpg" alt="Logo">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#about" aria-label="About">About</a>
+        <a href="#projects" aria-label="Projects">Projects</a>
+        <a href="#contact" aria-label="Contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Let me introduce myself to you.</h1>
+        <br>
+        <p><b>I'm Sounak Poddar, a passionate B.Tech student specializing in Artificial Intelligence and Machine Learning, beginning to build expertise in data science, algorithms, and emerging AI technologies. Alongside my studies, I’ve developed practical skills in HTML web development and graphic design, merging creativity with technical precision. Fluent in English, I communicate ideas effectively in both collaborative projects and independent research.
+
+        My approach to work is defined by a calm confidence and high-class professionalism, focusing on active listening and tackling challenges with thoughtful attention to detail. Looking ahead, I aim to excel in software engineering, leveraging my foundation in AI and ML to build solutions with real-world impact. I’m also driven to develop my leadership skills and aspire to take on administrative roles in the tech industry.
+
+        With a commitment to continuous growth and meaningful contributions, I am dedicated to a career where precision, purpose, and creativity drive progress.</b></p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>My pastimes.</h2>
+        <div class="interactive-tiles">
+            <div class="interactive-tile">
+                <h3>I write quotes.</h3>
+                <img src="https://i.ibb.co/Lxq33TH/quote-in-handwriting.jpg" alt="Writing Quotes Image">
+            </div>
+            <div class="interactive-tile">
+                <h3>I read books.</h3>
+                <img src="https://assets.asaxiy.uz/product/items/desktop/b238aa416757ab4aa072a7236b997d162023090821193480083547RpfMLNT.jpg" alt="Reading Books Image">
+            </div>
+            <div class="interactive-tile">
+                <h3>I design graphical stuff.</h3>
+                <img src="https://i.ibb.co/c8SPnTv/graphics.jpg" alt="Graphic Design Image">
+            </div>
+            <div class="interactive-tile">
+                <h3>I play chess.</h3>
+                <img src="https://i.ibb.co/xgjYFZy/chess.jpg" alt="Playing Chess Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Web Development projects.</h2>
+        <div class="projects">
+            <div class="project-item">
+                <div class="interactive-tile">
+                    <h3>Kolkata Spitz Club</h3>
+                    <h3><a href="https://www.kolkataspitzclub.com" target="_blank" aria-label="Kolkata Spitz Club Project">www.kolkataspitzclub.com</a></h3>
+                    <p>Working on a business-oriented website about dogs, still under development.</p>
+                    <img src="https://i.ibb.co/cbCZw2s/KSCbanner.jpg" alt="Kolkata Spitz Club">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>You can reach me at: <a href="mailto:rcsou123@gmail.com">rcsou123@gmail.com</a></p>
+        
+        <div class="social-media">
+            <div class="interactive-tile">
+                <a href="https://www.instagram.com/officially_him._.998/" target="_blank" aria-label="Instagram Profile">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/640px-Instagram_icon.png" alt="Instagram Logo">
+                </a>
+                <a href="https://www.linkedin.com/in/sounak-poddar-591870334" target="_blank" aria-label="LinkedIn Profile">
+                    <img src="https://img.freepik.com/premium-vector/linkedin-app-round-icon-worlds-largest-professional-network-social-networking-jobs-careers_277909-817.jpg" alt="LinkedIn Logo">
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
